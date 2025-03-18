@@ -3,63 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Charles Schwab</title>
+    <title>Login Page</title>
     <style>
-        * {
-            box-sizing: border-box;
-            max-width: 100%;
-        }
-
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            font-family: Arial, sans-serif;
             height: 100vh;
-        }
-
-        .header {
-            height: 2cm;
-            background-color: #ffffff;
             display: flex;
             align-items: center;
-            padding-left: 20px;
-            position: relative;
+            justify-content: center;
         }
 
-        .header img {
-            height: 100%;
-            object-fit: contain;
-            max-height: 64px;
-        }
-
-        .banner {
-            width: 100%;
-            height: auto;
-            background-image: url('your-banner-image.jpg');
-            background-size: cover;
-            background-position: 50% 25%;
-            background-repeat: no-repeat;
+        .login-wrapper {
             display: flex;
             justify-content: center;
-            align-items: center;
-            padding: 25px 0;
+            width: 100%;
         }
 
         .login-container {
             background-color: #fff;
             padding: 26px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: calc(300px + 4cm);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            width: 370px;
+            min-width: 370px;
+            max-width: 370px;
             height: auto;
             position: relative;
-            max-width: 370px;
+            box-sizing: border-box;
+            border-radius: 10px;
         }
 
-        .login-header {
-            text-align: left;
-            font-size: 22px;
-            color: #000;
-            margin-bottom: 16px;
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 24px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #444;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            border-color: #2575fc;
+            outline: none;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #2575fc;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #1a5fd3;
         }
 
         .warning-message {
@@ -68,257 +89,59 @@
             text-align: center;
             margin-bottom: 20px;
             display: none;
-        }
-
-        .warning-message a {
-            color: #d32f2f;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .warning-message a:hover {
-            text-decoration: underline;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 7px;
-            margin: 5px 0 10px;
-            border: 1px solid #ccc;
-        }
-
-        button {
-            width: 100%;
+            word-break: break-word;
             padding: 10px;
-            background-color: #005a9e;
-            color: white;
-            border: none;
-            border-radius: 0px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #004a82;
-        }
-
-        .forgot-links a {
-            color: #006e99;
-            text-decoration: none;
-        }
-
-        .forgot-links a:hover {
-            text-decoration: underline;
-        }
-
-        .language-select {
-            display: flex;
-            align-items: center;
-            margin: 0px;
-        }
-
-        .language-select label {
-            margin-right: 10px;
-        }
-
-        .language-select select {
-            width: 150px;
-            margin-bottom: 0;
-        }
-
-        .info-section {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            padding: 20px 0;
-            background-color: #f9f9f9;
-        }
-
-        .info-box {
-            flex: 1;
-            margin: 0 10px;
-            text-align: left;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .info-box img {
-            width: 100%;
-            height: 150px;
-            object-fit: contain;
-            margin-bottom: 10px;
-        }
-
-        .info-box h3 {
-            font-size: 1.2em;
-            margin: 10px 0 5px;
-            color: #333;
-        }
-
-        .info-box p {
-            font-size: 0.9em;
-            color: #555;
-            margin: 0;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #f4f4f4;
-            font-size: 0.8em;
-            color: #777;
-        }
-
-        .call-banner {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #0078d4;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            z-index: 1000;
-        }
-
-        .call-banner a {
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .call-banner a:hover {
-            text-decoration: underline;
-        }
-
-        .remember-me {
-            overflow: hidden;
-            clear: both;
-        }
-
-        .remember-me input#remember-me-checkbox-stack {
-            float: left;
-            width: auto;
-            margin: 0 10px 10px 0;
-        }
-
-        label#remember-me-text-stack {
-            float: left;
-            font-size: 15px;
-            line-height: 1;
-        }
-
-        @media (max-width: 768px) {
-            .call-banner {
-                display: none;
-            }
+            border: 1px solid #d32f2f;
+            background-color: #fff0f0;
+            border-radius: 6px;
+            font-size: 14px;
+            line-height: 1.4;
         }
     </style>
-    <script>
-        function showWarningMessage(event) {
-            event.preventDefault();
-            const warningMessage = document.getElementById("warningMessage");
-            const callBanner = document.getElementById("callBanner");
-            warningMessage.style.display = "block";
-            callBanner.style.display = "block";
-        }
-    </script>
 </head>
 <body>
-
-    <!-- Header Section -->
-    <div class="header">
-        <img src="your-logo.png" alt="Logo">
-    </div>
-
-    <!-- Banner Section -->
-    <div class="banner">
+    <div class="login-wrapper">
         <div class="login-container">
-            <div class="warning-message" id="warningMessage">
-                Your account is blocked due to suspicious payment activity.<br>
-                Please call: <a href="tel:+18885555555">+1 (888) 555-5555</a> for help.<br>
-                Do not attempt to log in again.
-            </div>
-
-            <div class="login-header">Login to Schwab</div>
-            <form onsubmit="showWarningMessage(event)">
-                <label for="username">Login ID</label>
-                <input type="text" name="username" id="username" required>
-
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" required>
-
-                <label for="startPage">Start Page</label>
-                <select name="startPage" id="startPage" required>
-                    <option value="account_summary" selected>Account Summary</option>
-                    <option value="account_balance">Account Balance</option>
-                    <option value="position">Position</option>
-                    <option value="trade_ticket">Trade Ticket</option>
-                    <option value="history">History</option>
-                    <option value="stock_etf_trading">Stock & ETF Trading</option>
-                    <option value="option_trading">Option Trading</option>
-                    <option value="mutual_fund_trading">Mutual Fund Trading</option>
-                    <option value="bond_trading">Bond Trading</option>
-                    <option value="research">Research</option>
-                    <option value="order_status">Order Status</option>
-                    <option value="watchlist">Watchlist</option>
-                </select>
-
-                <div class="remember-me">
-                    <input type="checkbox" id="remember-me-checkbox-stack" name="remember-me-checkbox-stack">
-                    <label id="remember-me-text-stack" for="remember-me-checkbox-stack">Remember Login ID</label>
+            <h2>Login</h2>
+            <div id="warning" class="warning-message">Invalid credentials. Please try again.</div>
+            <form onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username">
                 </div>
-
-                <button type="submit">Login</button>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="login-btn">Login</button>
             </form>
-
-            <div class="forgot-links"><br>
-                <a href="#">Forgot Login ID or Password?</a><br>
-            </div>
-
-            <div class="language-select">
-                <label for="language">Language:</label>
-                <select name="language" id="language">
-                    <option value="en" selected>English</option>
-                    <option value="es">Español</option>
-                    <option value="fr">Français</option>
-                    <option value="de">Deutsch</option>
-                </select>
-            </div>
         </div>
     </div>
 
-    <div class="divider"></div>
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value.trim();
+            var password = document.getElementById("password").value.trim();
+            var warning = document.getElementById("warning");
 
-    <div class="info-section">
-        <div class="info-box">
-            <img src="image1.jpg" alt="Section 1">
-            <h3>Bull or Bear?</h3>
-            <p>With the Services, you can get insights into investor ticks based on actual trading behavior of Schwab clients.</p>
-        </div>
-        <div class="info-box">
-            <img src="image2.jpg" alt="Section 2">
-            <h3>Looking to fund the future, you've always imagined?</h3>
-            <p>Learn how Schwab can help</p>
-        </div>
-        <div class="info-box">
-            <img src="image3.jpg" alt="Section 3">
-            <h3>The Schwab Investor Card® from ATM Express.</h3>
-            <p>Earn a $300 Card Statement Credit when you spend $1,000 in the first 3 months of Card Membership. Offer ends Soon. Terms apply.</p>
-        </div>
-    </div>
+            if (username === "" || password === "") {
+                warning.innerText = "Both fields are required.";
+                warning.style.display = "block";
+                return false;
+            }
 
-    <div class="footer">
-        <p>&copy; 2024 Schwab. All rights reserved.</p>
-        <p><a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
-    </div>
+            // Simulated validation example
+            if (username !== "admin" || password !== "password") {
+                warning.innerText = "Invalid credentials. Please try again.";
+                warning.style.display = "block";
+                return false;
+            }
 
-    <div class="call-banner" id="callBanner">
-        Need help? Call us now: <a href="tel:+18885555555">+1 (888) 555-5555</a>
-    </div>
-
+            // On success
+            warning.style.display = "none";
+            alert("Login successful!");
+            return true;
+        }
+    </script>
 </body>
 </html>
