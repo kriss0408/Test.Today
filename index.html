@@ -1,149 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Secure login guidance for Chales Accounts. Easy tracking and assistance for your online orders. Get started now!">
-  <title>Secure Access to Your Chales Account | chales.secure-login</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f6f9;
-      color: #333;
-    }
-    header, footer {
-      background-color: #234fa0;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      margin: 0 12px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 960px;
-      margin: auto;
-    }
-    h2 {
-      color: #234fa0;
-    }
-    .tracking-form {
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.08);
-      margin-top: 25px;
-    }
-    .tracking-form input, .tracking-form button {
-      width: 100%;
-      padding: 14px;
-      margin: 12px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 16px;
-    }
-    .tracking-form button {
-      background-color: #234fa0;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .note, .disclaimer {
-      font-size: 15px;
-      color: #666;
-      margin-top: 20px;
-    }
-    ul.features {
-      padding-left: 20px;
-    }
-    ul.features li {
-      margin-bottom: 10px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>chales.secure-login</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#features">Features</a>
-      <a href="#login-help">Login Help</a>
-      <a href="#track">Track Order</a>
-    </nav>
-  </header>
+// pages/index.tsx
 
-  <section id="about">
-    <h2>Welcome to Chales Secure Login Portal</h2>
-    <p>
-      Your one-stop destination for managing your Chales account securely. Whether you're tracking an order, need help with login assistance, or simply want to stay updated — we've got you covered.
-    </p>
-    <p>
-      We believe in simplicity, security, and support — so you can focus on what matters without worrying about technical issues.
-    </p>
-  </section>
+import React from "react";
+import Head from "next/head";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
-  <section id="features">
-    <h2>Why Choose Us?</h2>
-    <ul class="features">
-      <li>Secure Login Assistance & Recovery Steps</li>
-      <li>Real-time Order Status & Tracking</li>
-      <li>Fast, Human-Based Support System</li>
-      <li>Access Guidance for Your Accounts</li>
-      <li>Mobile-Optimized, User-Friendly Interface</li>
-    </ul>
-  </section>
+export default function Home() {
+  return (
+    <>
+      <Head>
+        <title>Charles Shoes | Shoe Suppliers & Designers</title>
+        <meta name="description" content="Charles Shoes - Premium shoe suppliers and custom shoe designers offering home delivery and order tracking services." />
+        <meta name="keywords" content="Charles Shoes, Shoe Suppliers, Custom Shoes, Shoe Designers, Order Tracking, Home Delivery" />
+        <meta name="robots" content="index, follow" />
+      </Head>
 
-  <section id="login-help">
-    <h2>Need Help Logging In?</h2>
-    <p>
-      Trouble accessing your Chales account? Don’t worry — our support system helps you recover access quickly. Ensure you have your login credentials handy. If you forgot your passcode or tracking ID, use our guided tools or contact our support team.
-    </p>
-  </section>
+      <main className="min-h-screen bg-gray-50 p-6">
+        <div className="max-w-4xl mx-auto text-center space-y-6">
+          <h1 className="text-4xl font-bold text-gray-800">Welcome to Charles Shoes</h1>
+          <p className="text-lg text-gray-600">
+            We are premium shoe suppliers and custom shoe designers offering home delivery and personalized designs to meet your style and comfort needs.
+          </p>
 
-  <section id="track">
-    <h2>Track Your Order</h2>
-    <p>
-      Enter your Tracking ID and Passcode below to view the real-time status of your recent purchases. These details are sent to your registered email after every transaction.
-    </p>
+          <Card className="bg-white shadow-md rounded-2xl p-4">
+            <CardContent className="space-y-4">
+              <h2 className="text-2xl font-semibold">Track Your Order</h2>
+              <p className="text-sm text-gray-500">Enter your Order ID to track the status of your purchase.</p>
+              <input
+                type="text"
+                placeholder="Enter Order ID"
+                className="w-full p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">Track Order</Button>
+            </CardContent>
+          </Card>
 
-    <div class="tracking-form">
-      <form action="#" method="POST">
-        <label for="trackingId">Tracking ID</label>
-        <input type="text" id="trackingId" name="trackingId" placeholder="Enter your Tracking ID" required>
+          <Card className="bg-white shadow-md rounded-2xl p-4">
+            <CardContent className="space-y-4">
+              <h2 className="text-xl font-semibold">Our Services</h2>
+              <ul className="list-disc list-inside text-left text-gray-600">
+                <li>Home Delivery</li>
+                <li>Custom Shoe Designs</li>
+                <li>Order Tracking</li>
+              </ul>
+            </CardContent>
+          </Card>
 
-        <label for="passcode">Passcode</label>
-        <input type="password" id="passcode" name="passcode" placeholder="Enter your Passcode" required>
+          <Card className="bg-white shadow-md rounded-2xl p-4">
+            <CardContent className="space-y-4">
+              <h2 className="text-xl font-semibold">About Us</h2>
+              <p className="text-gray-600">
+                At Charles Shoes, we blend craftsmanship and innovation to deliver premium quality shoes. As dedicated shoe suppliers and designers, we offer customized footwear solutions and reliable home delivery service.
+              </p>
+            </CardContent>
+          </Card>
 
-        <button type="submit">Track Order</button>
-      </form>
-    </div>
-
-    <div class="note">
-      Note: Your Tracking ID and Passcode were sent to your email after checkout. Kindly check your spam folder if you cannot locate it.
-    </div>
-  </section>
-
-  <section class="disclaimer">
-    <h2>Disclaimer</h2>
-    <p>
-      chales.secure-login is an independent informational and login-assistance website. We are not affiliated, endorsed, or associated with any financial institution, including Charles Schwab Corporation. All mentions are for user guidance and navigation purposes only.
-    </p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 chales.secure-login. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+          <div className="text-sm text-gray-500 space-y-3 mt-10">
+            <div>
+              <h3 className="font-semibold">Refund Policy</h3>
+              <p>
+                We offer a 7-day refund policy from the date of delivery. Products must be unused and returned in original condition.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold">Privacy Policy</h3>
+              <p>
+                We respect your privacy. Customer data is collected only for order processing and will never be shared with third parties.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold">Disclaimer</h3>
+              <p>
+                Charles Shoes is not affiliated with any other company or brand, including but not limited to Charles Schwab. All products and services are provided solely under the Charles Shoes brand.
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </>
+  );
+}
