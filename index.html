@@ -1,55 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pal Shoes - Order Tracking and PayPal Payment Help. 24/7 Customer Service. Call Now for support.">
-  <meta name="keywords" content="Pal Shoes, Order Tracking, PayPal Helpline, Customer Support, Shoe Orders, Online Payment">
-  <meta name="author" content="Pal Shoes">
-  <title>Pal Shoes | Track Your Order & PayPal Support</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Track your Pal Shoes orders, get live help for PayPal payments, and connect with our 24/7 customer service team." />
+  <meta name="keywords" content="Pal Shoes, Order Tracking, Custom Shoes, PayPal Help, Customer Support, Shoe Designs" />
+  <meta name="author" content="Pal Shoes" />
+  <title>Pal Shoes | Order Tracking & PayPal Help</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f9fb;
+      background: #f8fafc;
       color: #333;
     }
     header {
       background: #ffffff;
-      text-align: center;
+      color: #1e1e2f;
       padding: 2rem;
+      text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     header h1 {
-      font-size: 2.5rem;
-      margin: 0;
+      font-size: 2.2rem;
       font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    header h2 {
+      font-size: 1.3rem;
+      color: #444;
+      margin: 0.2rem 0;
+    }
+    nav {
+      margin-top: 1rem;
     }
     nav a {
-      margin: 0 15px;
-      text-decoration: none;
+      margin: 0 12px;
       color: #1e1e2f;
+      text-decoration: none;
       font-weight: 500;
     }
     section {
       max-width: 1000px;
       margin: 2rem auto;
-      background: white;
       padding: 2rem;
-      border-radius: 10px;
+      background: #ffffff;
+      border-radius: 12px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
-    h2 {
+    h3 {
       color: #1e1e2f;
+      margin-bottom: 1rem;
     }
     form input, form button {
       padding: 12px;
-      margin-top: 10px;
+      margin: 10px 0;
       width: 100%;
       max-width: 450px;
       font-size: 1rem;
-      border-radius: 5px;
+      border-radius: 6px;
       border: 1px solid #ccc;
     }
     form button {
@@ -57,28 +67,23 @@
       color: white;
       border: none;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
     form button:hover {
       background-color: #333;
     }
     footer {
-      background: #f4f4f4;
+      background: #f1f5f9;
+      color: #666;
       text-align: center;
       padding: 1.5rem;
       font-size: 0.9rem;
-      color: #666;
+      margin-top: 3rem;
     }
-    .announcement {
-      background: #ffe08a;
-      color: #1e1e2f;
-      padding: 1rem 2rem;
-      margin: 2rem auto;
-      max-width: 1000px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      font-weight: 500;
-      font-size: 1.05rem;
-      line-height: 1.6;
+    .disclaimer {
+      font-size: 0.95rem;
+      margin-top: 1rem;
+      color: #aa0000;
     }
   </style>
 </head>
@@ -86,51 +91,52 @@
 
 <header>
   <h1>Pal Shoes Order Tracking</h1>
-  <p>24/7 Customer Service | Call Now | PayPal-Helpline</p>
+  <h2>24/7 Customer Service | Call Now | PayPal-Helpline</h2>
   <nav>
+    <a href="#about">About Us</a>
     <a href="#track">Track Order</a>
-    <a href="#support">PayPal Support</a>
-    <a href="#disclaimer">Disclaimer</a>
+    <a href="#help">PayPal Help</a>
   </nav>
 </header>
 
-<div class="announcement">
-  📦 <strong>Notice:</strong> Track your Pal Shoes order and get guidance on PayPal payments. Our 24/7 helpline is available for your convenience.
-</div>
+<section id="about">
+  <h3>About Pal Shoes</h3>
+  <p><strong>Pal Shoes</strong> has been delivering excellence in footwear for the past <strong>5 years</strong>. We specialize in offering both standard and <strong>custom-designed shoes</strong> tailored to your unique style and needs.</p>
+  <p>This webpage is specifically designed to <strong>track your shoe orders</strong> and <strong>connect you with our live support agents</strong> for help related to shoe tracking and custom design orders.</p>
+</section>
 
 <section id="track">
-  <h2>Track Your Order</h2>
-  <p>Use the form below to track your Pal Shoes order.</p>
+  <h3>Track Your Order</h3>
+  <p>Use the form below to check the status of your Pal Shoes order securely.</p>
   <form>
     <label for="tracking-id">Tracking ID:</label><br>
     <input type="text" id="tracking-id" name="tracking-id" placeholder="e.g. PS123456" required><br>
     <label for="tracking-code">Tracking Code:</label><br>
-    <input type="text" id="tracking-code" name="tracking-code" placeholder="e.g. XY12ZT" required><br>
+    <input type="text" id="tracking-code" name="tracking-code" placeholder="e.g. AB12CD" required><br>
     <button type="submit">Track My Order</button>
   </form>
-  <p><em>Note: Tracking ID and Code are sent to your registered email address after purchase.</em></p>
+  <p><em>Note: Your Tracking ID and Code were sent to your registered email after your order.</em></p>
 </section>
 
-<section id="support">
-  <h2>PayPal Payment Help</h2>
-  <p>If you face any issues while making payments via PayPal, we’re here to assist you. Our support team is available 24/7 to guide you through the payment process.</p>
+<section id="help">
+  <h3>PayPal Payment Help</h3>
+  <p>If you need assistance in making payments via PayPal for your Pal Shoes orders, our team is here to guide you.</p>
   <ul>
-    <li>Need help completing a PayPal payment?</li>
-    <li>Confused about PayPal transaction ID?</li>
-    <li>Facing failed payment error?</li>
+    <li>Ensure your PayPal account is verified and active.</li>
+    <li>Choose PayPal as the payment method during checkout.</li>
+    <li>Follow the secure redirection to the PayPal website.</li>
+    <li>Complete the transaction and return to our confirmation page.</li>
   </ul>
-  <p><strong>Call our helpline or use the contact form for quick assistance.</strong></p>
+  <p>Our 24/7 support team is ready to assist you with any issues during payment or order placement.</p>
 </section>
 
-<section id="disclaimer">
-  <h2>Disclaimer</h2>
-  <p><strong>This website – https://pay-pal24x7-helpline.vercel.app – is not associated with PayPal or any other brand.</strong></p>
-  <p>Any reference to PayPal on this website is only to provide guidance on how to make payments via PayPal for our products. We do not claim any affiliation or representation with PayPal Inc. All support provided here is exclusively for customers of Pal Shoes.</p>
+<section class="disclaimer">
+  <p><strong>Disclaimer:</strong> This website – <a href="https://pay-pal24x7-helpline.vercel.app">https://pay-pal24x7-helpline.vercel.app</a> – is owned and operated by Pal Shoes. <strong>We are not affiliated with or endorsed by PayPal or any other brand.</strong> Any reference to PayPal is solely to help our customers understand the payment process while placing orders on our website.</p>
 </section>
 
 <footer>
   <p>© 2025 Pal Shoes | All Rights Reserved</p>
-  <p><a href="#support">PayPal Payment Help</a> | <a href="#disclaimer">Disclaimer</a></p>
+  <p><a href="#about">About Us</a> | <a href="#track">Track Order</a> | <a href="#help">PayPal Help</a></p>
 </footer>
 
 </body>
