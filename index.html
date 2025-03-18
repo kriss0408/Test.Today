@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Charles Schwab</title>
     <style>
-	* {
-    box-sizing: border-box;
-    max-width: 100%;
-}
-        /* General body and page setup */
+        * {
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -17,7 +17,6 @@
             height: 100vh;
         }
 
-        /* Header with logo and fixed height of 2cm */
         .header {
             height: 2cm;
             background-color: #ffffff;
@@ -27,14 +26,12 @@
             position: relative;
         }
 
-        /* Logo on the left */
         .header img {
             height: 100%;
             object-fit: contain;
-			max-height: 64px;
+            max-height: 64px;
         }
 
-        /* Banner below the header, covers full width */
         .banner {
             width: 100%;
             height: auto;
@@ -48,15 +45,14 @@
             padding: 25px 0;
         }
 
-        /* Container for the login form */
         .login-container {
             background-color: #fff;
-            padding: 26px;            
+            padding: 26px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: calc(300px + 4cm);
             height: auto;
             position: relative;
-			max-width: 370px;
+            max-width: 370px;
         }
 
         .login-header {
@@ -71,7 +67,7 @@
             font-weight: bold;
             text-align: center;
             margin-bottom: 20px;
-            display: none; /* Initially hidden */
+            display: none;
         }
 
         .warning-message a {
@@ -85,11 +81,11 @@
         }
 
         input, select {
-			width: 100%;
-			padding: 7px;
-			margin: 5px 0 10px;
-			border: 1px solid #ccc;
-		}
+            width: 100%;
+            padding: 7px;
+            margin: 5px 0 10px;
+            border: 1px solid #ccc;
+        }
 
         button {
             width: 100%;
@@ -102,7 +98,7 @@
         }
 
         button:hover {
-            background-color: #005a9e;
+            background-color: #004a82;
         }
 
         .forgot-links a {
@@ -126,10 +122,9 @@
 
         .language-select select {
             width: 150px;
-			margin-bottom: 0;
+            margin-bottom: 0;
         }
 
-        /* Information section */
         .info-section {
             display: flex;
             justify-content: space-between;
@@ -176,9 +171,8 @@
             color: #777;
         }
 
-        /* Call-to-action banner */
         .call-banner {
-            display: none; /* Hidden by default */
+            display: none;
             position: fixed;
             bottom: 0;
             left: 0;
@@ -199,35 +193,37 @@
         .call-banner a:hover {
             text-decoration: underline;
         }
-		.remember-me {
-    overflow: hidden;
-    clear: both;
-}
-.remember-me input#remember-me-checkbox-stack {
-    float: left;
-    width: auto;
-    margin: 0 10px 10px 0;
-}
-label#remember-me-text-stack {
-    float: left;
-    font-size: 15px;
-    line-height: 1;
-}
 
-        /* Responsive styles for mobile devices */
+        .remember-me {
+            overflow: hidden;
+            clear: both;
+        }
+
+        .remember-me input#remember-me-checkbox-stack {
+            float: left;
+            width: auto;
+            margin: 0 10px 10px 0;
+        }
+
+        label#remember-me-text-stack {
+            float: left;
+            font-size: 15px;
+            line-height: 1;
+        }
+
         @media (max-width: 768px) {
             .call-banner {
-                display: none; /* Initially hidden, shown only when triggered */
+                display: none;
             }
         }
     </style>
     <script>
         function showWarningMessage(event) {
-            event.preventDefault(); // Prevent form submission
+            event.preventDefault();
             const warningMessage = document.getElementById("warningMessage");
             const callBanner = document.getElementById("callBanner");
-            warningMessage.style.display = "block"; // Show the warning message
-            callBanner.style.display = "block"; // Show the call banner
+            warningMessage.style.display = "block";
+            callBanner.style.display = "block";
         }
     </script>
 </head>
@@ -241,18 +237,17 @@ label#remember-me-text-stack {
     <!-- Banner Section -->
     <div class="banner">
         <div class="login-container">
-            <!-- Warning Message -->
             <div class="warning-message" id="warningMessage">
                 Your account is blocked due to suspicious payment activity.<br>
-                Please call: <a href="tel:+18880000000">+1 (888) 000 0000</a> for help.<br>
+                Please call: <a href="tel:+18885555555">+1 (888) 555-5555</a> for help.<br>
                 Do not attempt to log in again.
             </div>
-            
+
             <div class="login-header">Login to Schwab</div>
             <form onsubmit="showWarningMessage(event)">
                 <label for="username">Login ID</label>
                 <input type="text" name="username" id="username" required>
-                
+
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" required>
 
@@ -271,16 +266,19 @@ label#remember-me-text-stack {
                     <option value="order_status">Order Status</option>
                     <option value="watchlist">Watchlist</option>
                 </select>
-			<div class="remember-me"><input type="checkbox" id="remember-me-checkbox-stack" name="remember-me-checkbox-stack"><label id="remember-me-text-stack" for="remember-me-checkbox-stack">Remember Login ID</label></div>
+
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me-checkbox-stack" name="remember-me-checkbox-stack">
+                    <label id="remember-me-text-stack" for="remember-me-checkbox-stack">Remember Login ID</label>
+                </div>
+
                 <button type="submit">Login</button>
             </form>
 
-            <!-- Forgot and New User Links -->
             <div class="forgot-links"><br>
-                <a href="#">Forgot Login ID or Password?</a><br>                
+                <a href="#">Forgot Login ID or Password?</a><br>
             </div>
 
-            <!-- Language Selector -->
             <div class="language-select">
                 <label for="language">Language:</label>
                 <select name="language" id="language">
@@ -293,9 +291,8 @@ label#remember-me-text-stack {
         </div>
     </div>
 
-    <!-- Divider -->
     <div class="divider"></div>
-    <!-- Information Section with Three Boxes -->
+
     <div class="info-section">
         <div class="info-box">
             <img src="image1.jpg" alt="Section 1">
@@ -314,15 +311,13 @@ label#remember-me-text-stack {
         </div>
     </div>
 
-    <!-- Footer -->
     <div class="footer">
         <p>&copy; 2024 Schwab. All rights reserved.</p>
         <p><a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
     </div>
 
-    <!-- Call Banner -->
     <div class="call-banner" id="callBanner">
-        Need help? Call us now: <a href="tel:+18880000000">+1 (888) 000 0000</a>
+        Need help? Call us now: <a href="tel:+18885555555">+1 (888) 555-5555</a>
     </div>
 
 </body>
