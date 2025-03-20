@@ -23,7 +23,8 @@
     h1 { font-size: 2rem; color: #111; }
     .section { margin-top: 30px; }
     .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
-    .product-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 16px; text-align: center; }
+    .product-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 16px; text-align: center; transition: transform 0.3s ease; }
+    .product-card:hover { transform: translateY(-5px); }
     .product-card img { max-width: 100%; height: auto; border-radius: 8px; }
     .product-card h3 { font-size: 1.1rem; margin: 12px 0 6px; }
     .product-card p { font-size: 0.9rem; color: #666; }
@@ -59,7 +60,7 @@
   </section>
 
   <section class="section">
-    <h2>Contact Glasses & Lenses</h2>
+    <h2>Contact Lenses & Glasses</h2>
     <div class="products">
       <div class="product-card">
         <img src="https://robinnhoood.com/wp-content/uploads/2023/11/contact-glasses.jpg" alt="Contact Glasses">
