@@ -1,136 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Customer help and product tracking for premium sunglasses.">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Sunglass Co">
-  <title>Sunglass Co - Help & Order Tracking</title>
+  <meta name="description" content="Track your order and explore our exclusive range of sunglasses, contact lenses, and more.">
+  <meta name="keywords" content="sunglasses, contact lenses, colored lenses, power lenses, home delivery">
+  <meta name="author" content="Optical Store">
+  <title>Order Support & Product Info | Optical Store</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
-      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #f4f4f4;
       color: #333;
     }
 
     header {
       background-color: #000;
-      color: #fff;
-      padding: 20px 0;
+      color: white;
+      padding: 1rem;
       text-align: center;
     }
 
     header h1 {
       margin: 0;
-      font-size: 32px;
+      font-size: 1.8rem;
     }
 
-    section {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 20px;
-      background-color: #fff;
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: white;
       border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     h2 {
-      font-size: 26px;
-      margin-bottom: 10px;
+      color: #222;
+      margin-top: 2rem;
     }
 
-    p {
-      font-size: 18px;
-      line-height: 1.6;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
 
-    .button {
-      display: inline-block;
-      background-color: #007BFF;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 18px;
-      margin-top: 15px;
-      transition: background-color 0.3s;
+    label {
+      font-weight: bold;
     }
 
-    .button:hover {
-      background-color: #0056b3;
-    }
-
-    .track-form {
-      margin-top: 20px;
-    }
-
-    .track-form input[type="text"] {
-      padding: 10px;
-      font-size: 16px;
-      width: 70%;
-      margin-right: 10px;
-      border: 1px solid #ccc;
+    input[type="text"] {
+      padding: 0.5rem;
       border-radius: 5px;
+      border: 1px solid #ccc;
     }
 
-    .track-form input[type="submit"] {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #28a745;
-      color: #fff;
+    button {
+      padding: 0.7rem;
       border: none;
       border-radius: 5px;
+      background-color: #000;
+      color: white;
+      font-weight: bold;
       cursor: pointer;
     }
 
-    .track-form input[type="submit"]:hover {
-      background-color: #218838;
+    button:hover {
+      background-color: #333;
     }
 
-    footer {
+    .product-section {
+      margin-top: 2rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .product {
+      background-color: #fafafa;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
       text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #777;
+    }
+
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .product h3 {
+      margin: 0.8rem 0 0.4rem;
+      font-size: 1.2rem;
+    }
+
+    .product p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .info-box {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #e8f5e9;
+      border-left: 5px solid #4caf50;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.4rem;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
-    <h1>Sunglass Co</h1>
-    <p>Customer Support & Order Tracking</p>
+    <h1>Order Support & Product Showcase</h1>
   </header>
 
-  <section>
-    <h2>Need Help?</h2>
-    <p>We're here to help you with your orders, returns, and queries. Reach out to our support team for assistance.</p>
-    <a href="tel:+18001234567" class="button">Call Customer Support</a>
-  </section>
+  <div class="container">
+    <section>
+      <h2>Track Your Order</h2>
+      <form>
+        <label for="order-id">Enter Your Order ID:</label>
+        <input type="text" id="order-id" name="order-id" placeholder="e.g., #ORD12345">
+        <button type="submit">Track Order</button>
+      </form>
+    </section>
 
-  <section>
-    <h2>Track Your Order</h2>
-    <p>Enter your tracking ID below to get the latest updates on your sunglasses shipment.</p>
-    <form class="track-form" onsubmit="return trackOrder(event)">
-      <input type="text" id="trackingId" placeholder="Enter Tracking ID" required>
-      <input type="submit" value="Track">
-    </form>
-    <div id="trackingResult" style="margin-top: 20px; font-size: 16px;"></div>
-  </section>
+    <section class="product-section">
+      <h2>Explore Our Products</h2>
+      <div class="product-grid">
+        <div class="product">
+          <img src="https://source.unsplash.com/featured/?sunglasses" alt="Premium Sunglasses">
+          <h3>Premium Sunglasses</h3>
+          <p>Trendy and protective sunglasses for men and women. UV-protected, polarized and stylish frames.</p>
+        </div>
+        <div class="product">
+          <img src="https://source.unsplash.com/featured/?eyeglasses" alt="Contact Glasses">
+          <h3>Contact Glasses</h3>
+          <p>Wide range of classic and modern contact glasses with power and style options.</p>
+        </div>
+        <div class="product">
+          <img src="https://source.unsplash.com/featured/?contactlenses" alt="Power Contact Lenses">
+          <h3>Power Contact Lenses</h3>
+          <p>Comfortable, breathable lenses available in a variety of powers for perfect vision correction.</p>
+        </div>
+        <div class="product">
+          <img src="https://source.unsplash.com/featured/?colorlenses" alt="Colored Contact Lenses">
+          <h3>Colored Contact Lenses</h3>
+          <p>Add a vibrant touch to your eyes with our wide range of colored lenses — natural and bold shades available.</p>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    &copy; 2025 Sunglass Co. All rights reserved.
-  </footer>
+    <div class="info-box">
+      <h3><i class="fa-solid fa-truck"></i> We Offer Fast & Safe Home Delivery</h3>
+      <p>Enjoy our express delivery services straight to your doorstep. Hassle-free shopping and reliable delivery guaranteed.</p>
+    </div>
 
-  <script>
-    function trackOrder(event) {
-      event.preventDefault();
-      const trackingId = document.getElementById('trackingId').value;
-      const result = document.getElementById('trackingResult');
-      result.innerHTML = `Tracking ID <strong>${trackingId}</strong>: Shipment is in transit. Estimated delivery in 2–4 days.`;
-    }
-  </script>
+    <section>
+      <h2>Need More Help?</h2>
+      <p>Call us or WhatsApp at <strong>+91-XXXXXXXXXX</strong> for order support, product inquiries or assistance with prescriptions.</p>
+    </section>
+  </div>
+
 </body>
+
 </html>
+
+
